@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Audio } from "react-loader-spinner";
+import { Vortex } from "react-loader-spinner";
 
 export default function Weather(props) {
   function handleResponse(response){
@@ -12,13 +12,13 @@ export default function Weather(props) {
       .then(handleResponse);
      
     return (
-      <Audio
-        height="80"
-        width="80"
-        radius="9"
-        color="green"
-        ariaLabel="loading"
-        wrapperStyle
-        wrapperClass
+      <Vortex
+        visible={true}
+        height="150"
+        width="150"
+        ariaLabel="vortex-loading"
+        wrapperStyle={{}}
+        wrapperClass="vortex-wrapper"
+        colors={["red", "green", "blue", "yellow", "orange", "purple"]}
       />
     );}
