@@ -35,24 +35,24 @@ export default function Weather() {
 
   let form = (
     <form className="mb-3 ">
-      <div className="row">
-        <div className="col-9">
+      <h1>
+        
           <input
+          className="input"
             onChange={updateCity}
             type="search"
-            placeholder="&#128269; Type Name of City"
+            placeholder="&#128269; Type City"
             autoComplete="on"
           />
-        </div>
-        <div className="col-3">
+               
           <input
             type="submit"
             value="Search"
             onClick={handleSubmit}
-            className="btn btn-primary w-100"
+            className="btn btn-primary"
           />
-        </div>
-      </div>
+        
+      </h1>
     </form>
   );
 
@@ -61,25 +61,48 @@ export default function Weather() {
       <div className="App">
         {form}
         <br />
-
-        <div>
-          <h3>
-            <strong>{weather.city}</strong>
-          </h3>
-          <h5>Temperature: {Math.round(weather.temperature)} °C</h5>
-          <h5>Description: {weather.description} </h5>
-          <h5>Humidity: {Math.round(weather.humidity)} %</h5>
-          <h5>Wind: {Math.round(weather.wind)} m/s</h5>
-        </div>
-        <div>
-          <img src={`https://openweathermap.org/img/wn/${weather.icon}.png`} />
-        </div>
+<div className="weatherNow">
+      <div className="overview">
+        <h1>{weather.city}</h1>
+        <ul>
+          <li>Last updated: Today </li>
+          <li>{weather.description}</li>
+        </ul>
       </div>
+
+      <div className="row">
+        
+        <div className="col-2 clearfix weather-temperature">
+              <img src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
+              alt={weather.description}
+              className="float-right"
+            /> 
+          </div>
+          
+            <div className="col-5 float-left clearfix weather-temperature">
+             <strong>{Math.round(weather.temperature)}</strong>
+              <span className="units">
+                <a href="/">°C</a> | <a href="/">°F</a>
+              </span>
+            </div>
+       
+        <div className="col-5">
+          <ul>
+            <li>Humidity: {Math.round(weather.humidity)}%</li>
+            <li>Wind: {Math.round(weather.wind)} m/s</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+</div>
     );
   } else {
     return (
       <div className="App">
         {form}
+        <h1>
        <Vortex
         visible={true}
         height="150"
@@ -88,8 +111,8 @@ export default function Weather() {
         wrapperStyle={{}}
         wrapperClass="vortex-wrapper"
         colors={["BurlyWood", "coral", "gold", "darkOliveGreen", "orange", "brown"]}
-      />
-        <h5>Please provide a valid city name. </h5>
+      /></h1>
+        <h1>Please provide a valid city name. </h1>
       </div>
     );
   }
