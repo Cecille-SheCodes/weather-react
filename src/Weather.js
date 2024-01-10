@@ -19,6 +19,6 @@ export default function Weather(props) {
         ariaLabel="vortex-loading"
         wrapperStyle={{}}
         wrapperClass="vortex-wrapper"
-        colors={["red", "green", "blue", "yellow", "orange", "purple"]}
+        colors={["BurlyWood", "coral", "gold", "darkOliveGreen", "orange", "brown"]}
       />
     );}
