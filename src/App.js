@@ -10,8 +10,8 @@ function App() {
         <br/>
         <Weather  />
         <br/>
-        <p>Designed by <a href="https://www.shecodes.io/graduates/82140-cecille-speckmaier">CMSpeckmaier</a></p>
-        <a href="https://github.com/Cecille-SheCodes/weather-react"> and is open-sourced in GitHub</a>
+        <p className="links">Designed by <a href="https://www.shecodes.io/graduates/82140-cecille-speckmaier">CMSpeckmaier</a> and open-sourced in <a href="https://github.com/Cecille-SheCodes/weather-react">GitHub</a></p>
+        
     </div>
   );
 }
