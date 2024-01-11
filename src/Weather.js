@@ -58,10 +58,10 @@ export default function Weather() {
 
   if (loaded && weather) {
     return (
-      <div className="App">
+      <div >
         {form}
         <br />
-<div className="weatherNow">
+      <div className="weatherNow">
       <div className="overview">
         <h1>{weather.city}</h1>
         <ul>
@@ -100,7 +100,7 @@ export default function Weather() {
     );
   } else {
     return (
-      <div className="App">
+      <div >
         {form}
         <h1>
        <Vortex
@@ -129,6 +129,6 @@ export default function Weather() {
    // let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=e41d480a236e63c3ed66acc7310d68f6&units=metric`;
   //  axios
     //  .get(url)
-  //    .then(handleResponse);
+  //    .then(handleResponse)
      
   
