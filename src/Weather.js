@@ -2,6 +2,8 @@ import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { Vortex } from "react-loader-spinner";
+import WeatherInfo from "./WeatherInfo";
+
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
