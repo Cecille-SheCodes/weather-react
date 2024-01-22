@@ -98,6 +98,7 @@ export default function Weather() {
       </div>
     );
   } else {
+    handleSubmit();
     return (
       <div >
         {form}
