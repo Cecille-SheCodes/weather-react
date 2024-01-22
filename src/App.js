@@ -23,7 +23,7 @@ function App() {
           href="https://github.com/Cecille-SheCodes/weather-react"
           target="_blank"
           rel="noreferrer"
-        >
+        > 
           GitHub
         </a>
       </p>

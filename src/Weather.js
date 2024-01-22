@@ -16,6 +16,7 @@ export default function Weather() {
       .then((response) => {
         setLoaded(true);
         setWeather({
+          date: new Date(response.data.dt * 1000),
           city: response.data.name,
           temperature: response.data.main.temp,
           humidity: response.data.main.humidity,
@@ -58,45 +59,43 @@ export default function Weather() {
 
   if (loaded && weather) {
     return (
-      <div >
+      <div>
         {form}
         <br />
-      <div className="weatherNow">
-      <div className="overview">
-        <h1>{weather.city}</h1>
-        <ul>
-          <li>Last updated: Today </li>
-          <li>{weather.description}</li>
-        </ul>
-      </div>
-
-      <div className="row">
-        
-        <div className="col-2 clearfix weather-temperature">
-              <img src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
-              alt={weather.description}
-              className="float-right"
-            /> 
+        <div className="weatherNow">
+          <div className="overview">
+            <h1>{weather.city}</h1>
+            <ul>
+              <li>{weather.date} </li>
+              <li>{weather.description}</li>
+            </ul>
           </div>
-          
+
+          <div className="row">
+            <div className="col-2 clearfix weather-temperature">
+              <img
+                src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
+                alt={weather.description}
+                className="float-right"
+              />
+            </div>
+
             <div className="col-5 float-left clearfix weather-temperature">
-             <strong>{Math.round(weather.temperature)}</strong>
+              <strong>{Math.round(weather.temperature)}</strong>
               <span className="units">
                 <a href="/">°C</a> | <a href="/">°F</a>
               </span>
             </div>
-       
-        <div className="col-5">
-          <ul>
-            <li>Humidity: {Math.round(weather.humidity)}%</li>
-            <li>Wind: {Math.round(weather.wind)} m/s</li>
-          </ul>
+
+            <div className="col-5">
+              <ul>
+                <li>Humidity: {Math.round(weather.humidity)}%</li>
+                <li>Wind: {Math.round(weather.wind)} m/s</li>
+              </ul>
+            </div>
+          </div>
         </div>
-
       </div>
-
-    </div>
-</div>
     );
   } else {
     return (
@@ -122,13 +121,4 @@ export default function Weather() {
 
 
 
-// export default function Weather(props) {
- // function handleResponse(response){
-   // alert (`The current temperature in ${response.data.name} is ${response.data.main.temp} °C.`)
-  
-   // let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=e41d480a236e63c3ed66acc7310d68f6&units=metric`;
-  //  axios
-    //  .get(url)
-  //    .then(handleResponse)
-     
   
