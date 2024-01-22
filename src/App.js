@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <h1 className="header">My Weather App</h1>
       <br />
-      <Weather />
+      <Weather defaultCity="Munich" />
       <br />
       <p className="links">
         Designed by{" "}
@@ -23,7 +23,7 @@ function App() {
           href="https://github.com/Cecille-SheCodes/weather-react"
           target="_blank"
           rel="noreferrer"
-        > 
+        >
           GitHub
         </a>
       </p>

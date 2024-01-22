@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Vortex } from "react-loader-spinner";
 
-export default function Weather() {
-  const [city, setCity] = useState("");
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
 
@@ -62,39 +62,7 @@ export default function Weather() {
       <div>
         {form}
         <br />
-        <div className="weatherNow">
-          <div className="overview">
-            <h1>{weather.city}</h1>
-            <ul>
-              <li>{weather.date} </li>
-              <li>{weather.description}</li>
-            </ul>
-          </div>
-
-          <div className="row">
-            <div className="col-2 clearfix weather-temperature">
-              <img
-                src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
-                alt={weather.description}
-                className="float-right"
-              />
-            </div>
-
-            <div className="col-5 float-left clearfix weather-temperature">
-              <strong>{Math.round(weather.temperature)}</strong>
-              <span className="units">
-                <a href="/">°C</a> | <a href="/">°F</a>
-              </span>
-            </div>
-
-            <div className="col-5">
-              <ul>
-                <li>Humidity: {Math.round(weather.humidity)}%</li>
-                <li>Wind: {Math.round(weather.wind)} m/s</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weather} />
       </div>
     );
   } else {
