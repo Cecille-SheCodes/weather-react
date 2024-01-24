@@ -9,7 +9,7 @@ function App() {
       <br />
       <Weather defaultCity="Munich" />
       <br />
-      <p className="links">
+      <p className="Links">
         Designed by{" "}
         <a
           href="https://www.shecodes.io/graduates/82140-cecille-speckmaier"
